@@ -17,10 +17,12 @@ function hotbarUI()
         >
 
         <textbutton 
-          Event = {{MouseButton1Down: (x, y) => updateButtonPosition(moveButton(x,y)),
+          Event = {{
+            MouseButton1Down: (x, y) => updateButtonPosition(moveButton(x,y)),
+            MouseButton1Up: () => updateButtonPosition(releaseButton())}}
             // Where I left off:
             /* How do I constantly update the UI's position, yet check if the button is still down? Could use a coroutine?*/
-          MouseButton1Up: () => updateButtonPosition(releaseButton())}}
+          
         
           Size = {new UDim2(0, 112.5, 0, 50)}
           Position = {uiPosition}
